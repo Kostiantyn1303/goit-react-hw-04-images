@@ -47,6 +47,11 @@ export function App() {
       return prevState.page + 1;
     });
   };
+  useEffect(() => {
+    if (error) {
+      toast.error(' Sorry!!! Nothing was found for your query!');
+    }
+  }, [error]);
   const handleFormSubmit = searchQuery => {
     if (query !== searchQuery) {
       resetState();
